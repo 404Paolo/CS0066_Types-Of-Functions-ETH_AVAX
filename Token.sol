@@ -17,4 +17,8 @@ contract SampleToken is ERC20, Ownable {
     function burn(uint256 amount) external {
         _burn(msg.sender, amount);
     }
+
+    function transferToken(address recipient, uint256 amount) external returns (bool) {
+        return transfer(recipient, amount);
+    }
 }
